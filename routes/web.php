@@ -18,3 +18,32 @@ Route::get('/home', function () {
 });
 
 
+// prendre en parametre un nom
+Route::get('/hello/{username}', function ($username) {
+    return view ('hello', compact('username'));
+});
+
+//calcule des parametre
+Route::get('/plus/{nbr1}/{nbr2}', function ($nbr1, $nbr2) {
+    $calcul = $nbr1 + $nbr2;
+    return view ('plus', compact('nbr1','nbr2','calcul'));
+});
+
+//-------------------- crud ----------------------
+
+//get all
+Route::get('/yordles', function () {
+    $all = App\Models\Yordle::all();
+    return view('index',compact('all'));
+});
+
+//find
+Route::get('/yordles/{id}', function ($id) {
+    $find = App\Models\Yordle::find($id);
+    return view('show',compact('find'));
+});
+
+//create
+Route::get('/yordles/create', function () {
+    return view('create');
+});

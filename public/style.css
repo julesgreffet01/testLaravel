@@ -1,3 +1,30 @@
 strong {
     color : red;
 }
+body {
+    background: lightblue;
+}
+td {
+    padding-top: 10px;
+    padding-right: 30px;
+}
+th {
+    padding-right: 30px;
+}
+a {
+    color: black;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: bold;
+}
+p {
+    margin-bottom: 20px;
+}
+
+img {
+    height: 100px;
+}
+
+
+
+
