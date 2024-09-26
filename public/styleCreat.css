@@ -1,0 +1,35 @@
+* {
+    background: #101010;
+    color: white;
+}
+
+#form, h1{
+    display : flex;
+    justify-content: center;
+}
+
+input {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+label:hover {
+    color: red;
+}
+
+button {
+    width: 370px;
+    height: 30px;
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+button:hover {
+    box-shadow: 10px 5px 5px white;
+}
+

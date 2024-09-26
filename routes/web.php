@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Yordle;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -37,13 +38,35 @@ Route::get('/yordles', function () {
     return view('index',compact('all'));
 });
 
-//find
+
+
+//create
+Route::get('/yordles/create', function () {
+    return view('create');
+});
+
+
+//show
 Route::get('/yordles/{id}', function ($id) {
     $find = App\Models\Yordle::find($id);
     return view('show',compact('find'));
 });
 
-//create
-Route::get('/yordles/create', function () {
-    return view('create');
+//store
+Route::post('/yordles', function () {
+
+    $validate = request()->validate([
+        'yordle_name' => 'required',
+        'yordle_price' => 'integer',
+    ]);
+
+   $y = new Yordle;
+   $y -> name = request('yordle_name');
+   $y -> price = request('yordle_price');
+   $y -> description = request('yordle_desc');
+   $y -> image = request('yordle_image');
+   $y -> dateBirthday = request('yordle_birthday');
+   $y -> save();
+
+   return redirect('/yordles/'.$y->id);
 });
