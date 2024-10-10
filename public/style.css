@@ -1,30 +1,83 @@
+/* Couleur du texte en gras */
 strong {
-    color : red;
+    color: #e63946;
 }
+
+/* Style pour le corps de la page */
 body {
-    background: lightblue;
+    background: #f1faee; /* Un fond clair et doux */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
 }
+
+/* Style pour le tableau */
+table {
+    border-collapse: collapse;
+    width: auto;
+    background-color: #ffffff; /* Fond blanc pour le tableau */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    border-radius: 8px; /* Coins arrondis */
+    overflow: hidden;
+}
+
+/* Style des cellules */
+th, td {
+    padding: 12px 24px;
+    border: 1px solid #e1e1e1; /* Bordures légères */
+    text-align: left;
+}
+
+/* En-têtes du tableau */
+th {
+    background-color: #457b9d; /* Couleur de fond bleu-gris */
+    color: #ffffff; /* Couleur du texte en blanc */
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Lignes du tableau */
 td {
     padding-top: 10px;
     padding-right: 30px;
+    font-size: 0.95em;
+    color: #333333; /* Texte gris foncé */
 }
-th {
-    padding-right: 30px;
+
+tr:nth-child(even) {
+    background-color: #f8f9fa; /* Alternance de couleur pour les lignes */
 }
+
+tr:hover {
+    background-color: #e9ecef; /* Effet survol léger */
+}
+
+/* Style des liens */
 a {
-    color: black;
-    font-size: 1.2em;
+    color: #1d3557;
+    font-size: 1.1em;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease; /* Animation de transition pour le survol */
 }
+
+a:hover {
+    color: #e63946; /* Changement de couleur au survol */
+}
+
+/* Style des paragraphes */
 p {
     margin-bottom: 20px;
+    font-size: 1em;
+    color: #2d2d2d;
 }
 
+/* Style des images */
 img {
     height: 100px;
+    border-radius: 4px; /* Coins légèrement arrondis pour les images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre légère autour de l'image */
 }
-
-
-
-

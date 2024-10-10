@@ -45,6 +45,12 @@ Route::get('/yordles/create', function () {
     return view('create');
 });
 
+//edit
+Route::get('/yordles/{id}/edit', function ($id) {
+    $find = App\Models\Yordle::find($id);
+    return view('edit', compact('find'));
+});
+
 
 //show
 Route::get('/yordles/{id}', function ($id) {
@@ -69,4 +75,26 @@ Route::post('/yordles', function () {
    $y -> save();
 
    return redirect('/yordles/'.$y->id);
+});
+
+
+
+//update
+Route::patch('/yordles/{id}', function ($id) {
+    $validate = request()->validate([
+        'yordle_name' => 'required',
+        'yordle_price' => 'required',
+        'yordle_desc' => 'required',
+        'yordle_birthday' => 'required',
+    ]);
+
+    $y = App\Models\Yordle::find($id);
+    $y -> name = request('yordle_name');
+    $y -> price = request('yordle_price');
+    $y -> description = request('yordle_desc');
+    $y -> image = request('yordle_image');
+    $y -> dateBirthday = request('yordle_birthday');
+    $y -> save();
+
+    return redirect('/yordles/'.$y->id);
 });

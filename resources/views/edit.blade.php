@@ -9,39 +9,41 @@
     <title>Document</title>
 </head>
 <body>
-
-<h1>Création</h1>
+<h1>Update</h1>
 <div id="form">
-    <form action="/yordles" method="post">
+    <form action="/yordles/{{$find->id}}" method="post">
         @csrf
+        @method('patch')
         <label for="name">Nom</label>
-        <input required value="{{old('yordle_name')}}" type="text" id="name" name="yordle_name" />
+        <input required value="{{$find->name}}" type="text" id="name" name="yordle_name" />
         @error('yordle_name')<style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <label for="price">Prix</label>
-        <input required value="{{old('yordle_price')}}" type="text" id="price" name="yordle_price" />
+        <input required value="{{$find->price}}" type="text" id="price" name="yordle_price" />
         @error('yordle_price')
         <style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <label for="desc">Description</label>
-        <input required value="{{old('yordle_desc')}}" type="text" id="desc" name="yordle_desc" />
+        <input required value="{{$find->description}}" type="text" id="desc" name="yordle_desc" />
         @error('yordle_desc')<style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <label for="image">URL de l'image</label>
-        <input value="{{old('yordle_image')}}" type="text" id="image" name="yordle_image" />
+        <input value="{{$find->image}}" type="text" id="image" name="yordle_image" />
         @error('yordle_image')<style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <label for="DateBirthday">Date d'anniversaire</label>
-        <input required value="{{old('yordle_birthday')}}" type="date" id="DateBirthday" name="yordle_birthday" />
+        <input required value="{{$find->dateBirthday}}" type="date" id="DateBirthday" name="yordle_birthday" />
         @error('yordle_birthday')<style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
-        <button id="BtnAdd" name="BtnAdd">Add</button>
+        <button id="BtnUpdate" name="BtnUpdate">Update</button>
         <br>
         <input type="reset" value="Clear">
         <a href="/yordles"><button id="retour">retour</button></a>
 
     </form>
 </div>
-
 </body>
 </html>
+</body>
+</html>
+

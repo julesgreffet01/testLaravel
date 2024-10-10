@@ -11,6 +11,7 @@
 </head>
 <body>
 
+<div>
 <table>
 <tr>
     <th>ID</th>
@@ -20,6 +21,7 @@
     <th>BIRTH DATE</th>
     <th>IMAGE</th>
     <th>DETAILS</th>
+    <th>MODIFIER</th>
 </tr>
 @foreach ($all as $row)
         <tr>
@@ -30,8 +32,10 @@
             <td>{{$row->dateBirthday}}</td>
             <td><img src="{{$row->image}}"></td>
             <td><a href="/yordles/{{$row->id}}">voir</a></td>
+            <td><a href="/yordles/{{$row->id}}/edit">modif</a></td>
         </tr>
 @endforeach
 </table>
+</div>
 </body>
 </html>
