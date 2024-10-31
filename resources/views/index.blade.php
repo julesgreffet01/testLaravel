@@ -22,6 +22,7 @@
     <th>IMAGE</th>
     <th>DETAILS</th>
     <th>MODIFIER</th>
+    <th>DETRUIRE</th>
 </tr>
 @foreach ($all as $row)
         <tr>
@@ -33,9 +34,19 @@
             <td><img src="{{$row->image}}"></td>
             <td><a href="/yordles/{{$row->id}}">voir</a></td>
             <td><a href="/yordles/{{$row->id}}/edit">modif</a></td>
+            <td>
+                <form method="post" action="/yordles/{{$row->id}}">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" value="supprimer" name="supprimer">
+                </form>
+            </td>
         </tr>
 @endforeach
 </table>
 </div>
+<form methode="post" action="/yordles/create" id="crea">
+    <input type="submit" value="creation" name="creation">
+</form>
 </body>
 </html>

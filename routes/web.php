@@ -1,7 +1,8 @@
 <?php
 
-use App\Models\Yordle;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\YordleController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,68 +34,28 @@ Route::get('/plus/{nbr1}/{nbr2}', function ($nbr1, $nbr2) {
 //-------------------- crud ----------------------
 
 //get all
-Route::get('/yordles', function () {
-    $all = App\Models\Yordle::all();
-    return view('index',compact('all'));
-});
-
+Route::get('/yordles', [YordleController::class, 'index']);
 
 
 //create
-Route::get('/yordles/create', function () {
-    return view('create');
-});
+Route::get('/yordles/create', [YordleController::class, 'create']);
+
 
 //edit
-Route::get('/yordles/{id}/edit', function ($id) {
-    $find = App\Models\Yordle::find($id);
-    return view('edit', compact('find'));
-});
+Route::get('/yordles/{id}/edit', [YordleController::class, 'edit']);
 
 
 //show
-Route::get('/yordles/{id}', function ($id) {
-    $find = App\Models\Yordle::find($id);
-    return view('show',compact('find'));
-});
+Route::get('/yordles/{id}', [YordleController::class, 'show']);
+
 
 //store
-Route::post('/yordles', function () {
-
-    $validate = request()->validate([
-        'yordle_name' => 'required',
-        'yordle_price' => 'integer',
-    ]);
-
-   $y = new Yordle;
-   $y -> name = request('yordle_name');
-   $y -> price = request('yordle_price');
-   $y -> description = request('yordle_desc');
-   $y -> image = request('yordle_image');
-   $y -> dateBirthday = request('yordle_birthday');
-   $y -> save();
-
-   return redirect('/yordles/'.$y->id);
-});
-
+Route::post('/yordles', [YordleController::class, 'store']);
 
 
 //update
-Route::patch('/yordles/{id}', function ($id) {
-    $validate = request()->validate([
-        'yordle_name' => 'required',
-        'yordle_price' => 'required',
-        'yordle_desc' => 'required',
-        'yordle_birthday' => 'required',
-    ]);
+Route::patch('/yordles/{id}', [YordleController::class, 'update']);
 
-    $y = App\Models\Yordle::find($id);
-    $y -> name = request('yordle_name');
-    $y -> price = request('yordle_price');
-    $y -> description = request('yordle_desc');
-    $y -> image = request('yordle_image');
-    $y -> dateBirthday = request('yordle_birthday');
-    $y -> save();
 
-    return redirect('/yordles/'.$y->id);
-});
+//destroy
+Route::delete('/yordles/{id}', [YordleController::class, 'destroy']);

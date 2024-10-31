@@ -9,6 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     margin: 0;
     font-family: 'Arial', sans-serif;
 }
@@ -21,6 +22,7 @@ table {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
     border-radius: 8px; /* Coins arrondis */
     overflow: hidden;
+    margin-top: 20px;
 }
 
 /* Style des cellules */
@@ -80,4 +82,26 @@ img {
     height: 100px;
     border-radius: 4px; /* Coins légèrement arrondis pour les images */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre légère autour de l'image */
+}
+
+input[type="submit"] {
+    background-color: #1d3557; /* Couleur de fond similaire aux liens */
+    color: #ffffff; /* Couleur du texte */
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #e63946; /* Changement de couleur au survol */
+}
+
+#crea {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }

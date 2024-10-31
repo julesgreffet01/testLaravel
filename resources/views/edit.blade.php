@@ -15,16 +15,16 @@
         @csrf
         @method('patch')
         <label for="name">Nom</label>
-        <input required value="{{$find->name}}" type="text" id="name" name="yordle_name" />
+        <input value="{{$find->name}}" type="text" id="name" name="yordle_name" />
         @error('yordle_name')<style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <label for="price">Prix</label>
-        <input required value="{{$find->price}}" type="text" id="price" name="yordle_price" />
+        <input value="{{$find->price}}" type="text" id="price" name="yordle_price" />
         @error('yordle_price')
         <style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <label for="desc">Description</label>
-        <input required value="{{$find->description}}" type="text" id="desc" name="yordle_desc" />
+        <input value="{{$find->description}}" type="text" id="desc" name="yordle_desc" />
         @error('yordle_desc')<style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <label for="image">URL de l'image</label>
@@ -32,7 +32,7 @@
         @error('yordle_image')<style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <label for="DateBirthday">Date d'anniversaire</label>
-        <input required value="{{$find->dateBirthday}}" type="date" id="DateBirthday" name="yordle_birthday" />
+        <input value="{{$find->dateBirthday}}" type="date" id="DateBirthday" name="yordle_birthday" />
         @error('yordle_birthday')<style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <button id="BtnUpdate" name="BtnUpdate">Update</button>

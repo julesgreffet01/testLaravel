@@ -15,16 +15,16 @@
     <form action="/yordles" method="post">
         @csrf
         <label for="name">Nom</label>
-        <input required value="{{old('yordle_name')}}" type="text" id="name" name="yordle_name" />
+        <input value="{{old('yordle_name')}}" type="text" id="name" name="yordle_name" />
         @error('yordle_name')<style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <label for="price">Prix</label>
-        <input required value="{{old('yordle_price')}}" type="text" id="price" name="yordle_price" />
+        <input value="{{old('yordle_price')}}" type="text" id="price" name="yordle_price" />
         @error('yordle_price')
         <style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <label for="desc">Description</label>
-        <input required value="{{old('yordle_desc')}}" type="text" id="desc" name="yordle_desc" />
+        <input value="{{old('yordle_desc')}}" type="text" id="desc" name="yordle_desc" />
         @error('yordle_desc')<style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <label for="image">URL de l'image</label>
@@ -32,15 +32,14 @@
         @error('yordle_image')<style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <label for="DateBirthday">Date d'anniversaire</label>
-        <input required value="{{old('yordle_birthday')}}" type="date" id="DateBirthday" name="yordle_birthday" />
+        <input value="{{old('yordle_birthday')}}" type="date" id="DateBirthday" name="yordle_birthday" />
         @error('yordle_birthday')<style>.error {background: red;}</style><div class="error">{{$message}} </div>@enderror
         <br>
         <button id="BtnAdd" name="BtnAdd">Add</button>
         <br>
         <input type="reset" value="Clear">
-        <a href="/yordles"><button id="retour">retour</button></a>
-
     </form>
+    <a href="/yordles"><button id="retour">retour</button></a>
 </div>
 
 </body>
