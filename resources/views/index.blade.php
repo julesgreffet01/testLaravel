@@ -15,11 +15,11 @@
 <table>
 <tr>
     <th>ID</th>
-    <th>NAME</th>
-    <th>PRICE</th>
+    <th>{{ __('NAME') }}</th>
+    <th>{{ __('PRICE') }}</th>
     <th>DESCRIPTION</th>
-    <th>BIRTH DATE</th>
-    <th>IMAGE</th>
+    <th>{{ __('BIRTH DATE') }}</th>
+    <th>{{ __('PICTURE') }}</th>
     <th>DETAILS</th>
     <th>MODIFIER</th>
     <th>DETRUIRE</th>

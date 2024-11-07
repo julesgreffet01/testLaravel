@@ -3,29 +3,29 @@
 namespace App\Http\Controllers;
 use App\Models\Yordle;
 
-class YordleController
+class YordleController extends Controller
 {
     //index
-    function index() {
+    public function index() {
         $all = Yordle::all();
         return view('index',compact('all'));
     }
     //create
-    function create() {
+    public function create() {
         return view('create');
     }
     //edit
-    function edit($id) {
+    public function edit($id) {
         $find = Yordle::find($id);
         return view('edit', compact('find'));
     }
     //show
-    function show($id) {
+    public function show($id) {
         $find = Yordle::find($id);
         return view('show',compact('find'));
     }
     //store
-    function store() {
+    public function store() {
 
         $validate = request()->validate([
             'yordle_name' => 'required',
@@ -44,7 +44,7 @@ class YordleController
     }
 
     //update
-    function update($id) {
+    public function update($id) {
         $validate = request()->validate([
             'yordle_name' => 'required',
             'yordle_price' => 'required',
@@ -64,7 +64,7 @@ class YordleController
     }
 
     //destroy
-    function destroy($id) {
+    public function destroy($id) {
         $y = Yordle::destroy($id);
         return redirect('/yordles');
     }

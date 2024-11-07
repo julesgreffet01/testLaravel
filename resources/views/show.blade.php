@@ -13,9 +13,10 @@
 <div id="find">
     <p><img src="{{$find->image}}"></p>
     <p><strong>id :</strong> {{$find->id}}</p>
-    <p><strong>name :</strong> {{$find->name}}</p>
+    <p><strong>{{ __('name') }} :</strong> {{$find->name}}</p>
+    <p><strong>{{ __('price') }} :</strong> {{$find->price}}</p>
     <p><strong>description :</strong> {{$find->description}}</p>
-    <p><strong>dateBirthday :</strong> {{$find->dateBirthday}}</p>
+    <p><strong>{{ __('dateBirthday') }} :</strong> {{$find->dateBirthday}}</p>
     <a href="/yordles">retour</a>
 </div>
 

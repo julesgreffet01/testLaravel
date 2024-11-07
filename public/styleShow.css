@@ -51,6 +51,8 @@ a {
     border-radius: 6px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    margin-left: 75px;
+    margin-top: 10px;
 }
 
 a:hover {

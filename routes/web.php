@@ -34,28 +34,24 @@ Route::get('/plus/{nbr1}/{nbr2}', function ($nbr1, $nbr2) {
 //-------------------- crud ----------------------
 
 //get all
-Route::get('/yordles', [YordleController::class, 'index']);
-
+//Route::get('/yordles', [YordleController::class, 'index']);
 
 //create
-Route::get('/yordles/create', [YordleController::class, 'create']);
-
+//Route::get('/yordles/create', [YordleController::class, 'create']);
 
 //edit
-Route::get('/yordles/{id}/edit', [YordleController::class, 'edit']);
-
+//Route::get('/yordles/{id}/edit', [YordleController::class, 'edit']);
 
 //show
-Route::get('/yordles/{id}', [YordleController::class, 'show']);
-
+//Route::get('/yordles/{id}', [YordleController::class, 'show']);
 
 //store
-Route::post('/yordles', [YordleController::class, 'store']);
-
+//Route::post('/yordles', [YordleController::class, 'store']);
 
 //update
-Route::patch('/yordles/{id}', [YordleController::class, 'update']);
-
+//Route::patch('/yordles/{id}', [YordleController::class, 'update']);
 
 //destroy
-Route::delete('/yordles/{id}', [YordleController::class, 'destroy']);
+//Route::delete('/yordles/{id}', [YordleController::class, 'destroy']);
+
+Route::resource('/yordles', YordleController::class); //regroupe toutes les lignes si ca a ete fait dans la convention
